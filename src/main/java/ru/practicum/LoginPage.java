@@ -10,12 +10,12 @@ import java.time.Duration;
 public class LoginPage {
     private final WebDriver driver;
 
-    // Constructor
+
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    // Locators
+
     private final By poleEmail = By.xpath("//input[@name='name']");
     private final By polePassword = By.xpath("//input[@name='Пароль']");
     private final By loginButton = By.xpath("//button[text()='Войти']");
@@ -23,7 +23,7 @@ public class LoginPage {
     private final By findPasswordButton = By.xpath("//a[text()='Восстановить пароль']");
     private final By wrongPassword = By.xpath("//p[contains(@class, 'input__error')]");
 
-    // Methods
+
     public void setEmail(String email) {
         driver.findElement(poleEmail).sendKeys(email);
     }

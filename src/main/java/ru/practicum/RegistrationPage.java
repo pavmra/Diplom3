@@ -21,7 +21,7 @@ public class RegistrationPage {
     private final By loginButton = By.xpath("//a[text()='Войти']");
     private final By errorMessage = By.xpath("//p[contains(@class, 'input__error')]");
 
-    // Methods
+
     public void setName(String name) {
         driver.findElement(namePole).sendKeys(name);
     }

@@ -26,12 +26,17 @@ public class ConstructorTest {
     @DisplayName("Выбор зоны булочек")
     @Description("Тестируем переход к зоне булочек в конструкторе")
     public void testSwitchToBunsSection() {
-        // First switch to another section to ensure the test is valid
+
+        String initialTab = mainPage.getTextChoseArea();
+        if (!"Булки".equals(initialTab)) {
+            mainPage.clickBunsArea();
+
         mainPage.clickSaucesArea();
         mainPage.clickBunsArea();
 
         String activeTab = mainPage.getTextChoseArea();
         assertEquals("Зона булочек должна быть выбрана", "Булки", activeTab);
+    }
     }
 
     @Test

@@ -25,7 +25,7 @@ public class BrowserFactory {
     }
 
     private static WebDriver setupChrome() {
-        // Автоматически подбирает правильную версию ChromeDriver
+
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
@@ -38,7 +38,7 @@ public class BrowserFactory {
     }
 
     private static WebDriver setupYandex() {
-        // Для Yandex используем ChromeDriver, но с указанием пути к Yandex браузеру
+
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();

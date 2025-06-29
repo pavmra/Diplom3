@@ -1,0 +1,58 @@
+{
+  "uid" : "194824da7f8c2a2a",
+  "name" : "Авторизация через форму восстановления пароля",
+  "fullName" : "tests.LoginTest.loginPasswordRecovery",
+  "historyId" : "a593866b46ed1ebdbc3f0f018de46f84",
+  "time" : {
+    "start" : 1751209822933,
+    "stop" : 1751209827296,
+    "duration" : 4363
+  },
+  "description" : "Тестируем успешную авторизацию через форму восстановления пароля",
+  "descriptionHtml" : "<p>Тестируем успешную авторизацию через форму восстановления пароля</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "tests"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.LoginTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "loginPasswordRecovery"
+  }, {
+    "name" : "suite",
+    "value" : "tests.LoginTest"
+  }, {
+    "name" : "host",
+    "value" : "pavmra"
+  }, {
+    "name" : "thread",
+    "value" : "15092@pavmra.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "194824da7f8c2a2a.json",
+  "parameterValues" : [ ]
+}
