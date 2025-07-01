@@ -6,10 +6,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import ru.practicum.LoginPage;
-import ru.practicum.MainPage;
-import ru.practicum.PasswordRecoveryPage;
-import ru.practicum.RegistrationPage;
+import ru.practicum.UserModel;
+import ru.practicum.UserCreate;
+import steps.LoginPage;
+import steps.MainPage;
+import steps.PasswordRecoveryPage;
+import steps.RegistrationPage;
 import ru.practicum.BrowserFactory;
 import ru.practicum.TestDataGenerator;
 
@@ -21,35 +23,39 @@ public class LoginTest {
     private LoginPage loginPage;
     private RegistrationPage registrationPage;
     private PasswordRecoveryPage passwordRecoveryPage;
-    private String email;
-    private String password;
+    private UserCreate userApiClient;
+    private UserModel user;
+    private String accessToken;
+    public static final String MAIN = "https://stellarburgers.nomoreparties.site";
+    public static final String REGISTER = MAIN + "/register";
+    public static final String FORGET = MAIN + "/forgot-password";
+
 
     @Before
     public void setUp() {
-        driver = BrowserFactory.getDriver("chrome");
+        driver = BrowserFactory.getDriver(); // будет использоваться браузер который мы указали в properties
         mainPage = new MainPage(driver);
         loginPage = new LoginPage(driver);
         registrationPage = new RegistrationPage(driver);
         passwordRecoveryPage = new PasswordRecoveryPage(driver);
+        userApiClient = new UserCreate();
+        user = new UserModel(
+                TestDataGenerator.genEmail(),
+                TestDataGenerator.genPass(),
+                TestDataGenerator.genName()
+        );
 
-        email = TestDataGenerator.genEmail();
-        password = TestDataGenerator.genPass();
-
-
-        driver.get("https://stellarburgers.nomoreparties.site/");
-        mainPage.clickLoginButton();
-        loginPage.clickRegisterButton();
-        registrationPage.registration(TestDataGenerator.genName(), email, password);
+        userApiClient.register(user);
+        accessToken = userApiClient.getAccessToken(user);
     }
 
     @Test
     @DisplayName("Авторизация с кнопки на главной странице")
-    @Description("Тестируем успешную авторизацию с кнопки на главной странице")
+    @Description("Тестируем успешную авторизацию через кнопку на главной странице")
     public void loginMainButton() {
-        driver.get("https://stellarburgers.nomoreparties.site/");
+        driver.get(MAIN);
         mainPage.clickLoginButton();
-        loginPage.login(email, password);
-
+        loginPage.login(user.getEmail(), user.getPassword());
         assertTrue("Авторизация ОК", loginPage.isLoginOk());
     }
 
@@ -57,10 +63,9 @@ public class LoginTest {
     @DisplayName("Авторизация через личный кабинет")
     @Description("Тестируем успешную авторизацию через личный кабинет")
     public void loginAccountButton() {
-        driver.get("https://stellarburgers.nomoreparties.site/");
+        driver.get(MAIN);
         mainPage.clickMyAccountButton();
-        loginPage.login(email, password);
-
+        loginPage.login(user.getEmail(), user.getPassword());
         assertTrue("Авторизация ОК", loginPage.isLoginOk());
     }
 
@@ -68,10 +73,9 @@ public class LoginTest {
     @DisplayName("Авторизация через форму регистрации")
     @Description("Тестируем успешную авторизацию через форму регистрации")
     public void loginRegistrationForm() {
-        driver.get("https://stellarburgers.nomoreparties.site/register");
+        driver.get(REGISTER);
         registrationPage.clickLoginLink();
-        loginPage.login(email, password);
-
+        loginPage.login(user.getEmail(), user.getPassword());
         assertTrue("Авторизация ОК", loginPage.isLoginOk());
     }
 
@@ -79,15 +83,17 @@ public class LoginTest {
     @DisplayName("Авторизация через форму восстановления пароля")
     @Description("Тестируем успешную авторизацию через форму восстановления пароля")
     public void loginPasswordRecovery() {
-        driver.get("https://stellarburgers.nomoreparties.site/forgot-password");
+        driver.get(FORGET);
         passwordRecoveryPage.clickLoginLink();
-        loginPage.login(email, password);
-
+        loginPage.login(user.getEmail(), user.getPassword());
         assertTrue("Авторизация ОК", loginPage.isLoginOk());
     }
 
     @After
     public void tearDown() {
+        if (accessToken != null) {
+            userApiClient.delete(accessToken);
+        }
         if (driver != null) {
             driver.quit();
         }
