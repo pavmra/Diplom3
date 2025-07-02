@@ -1,0 +1,58 @@
+{
+  "uid" : "8c2f35f2756de395",
+  "name" : "Регистрация с невалидным паролем",
+  "fullName" : "RegistrationTest.testRegistrationWrongPassword",
+  "historyId" : "f2533aa77325fc000728ce7f1dbdbac0",
+  "time" : {
+    "start" : 1751209812155,
+    "stop" : 1751209815039,
+    "duration" : 2884
+  },
+  "description" : "Тестируем регистрацию с паролем меньше 6 символов",
+  "descriptionHtml" : "<p>Тестируем регистрацию с паролем меньше 6 символов</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : ""
+  }, {
+    "name" : "testClass",
+    "value" : "RegistrationTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "testRegistrationWrongPassword"
+  }, {
+    "name" : "suite",
+    "value" : "RegistrationTest"
+  }, {
+    "name" : "host",
+    "value" : "pavmra"
+  }, {
+    "name" : "thread",
+    "value" : "15092@pavmra.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "8c2f35f2756de395.json",
+  "parameterValues" : [ ]
+}

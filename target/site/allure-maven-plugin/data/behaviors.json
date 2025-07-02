@@ -1,0 +1,122 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Успешная регистрация",
+    "uid" : "63386f9d770f3af5",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1751209804789,
+      "stop" : 1751209812022,
+      "duration" : 7233
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Регистрация с невалидным паролем",
+    "uid" : "8c2f35f2756de395",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1751209812155,
+      "stop" : 1751209815039,
+      "duration" : 2884
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Выбор зоны соусов",
+    "uid" : "1c398646b6e8c38",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1751209815058,
+      "stop" : 1751209817749,
+      "duration" : 2691
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Выбор зоны наполнителя",
+    "uid" : "6d8aa314699a080c",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1751209817753,
+      "stop" : 1751209820338,
+      "duration" : 2585
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Выбор зоны булочек",
+    "uid" : "154a05105add4af4",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1751209820342,
+      "stop" : 1751209822923,
+      "duration" : 2581
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Авторизация через форму восстановления пароля",
+    "uid" : "194824da7f8c2a2a",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1751209822933,
+      "stop" : 1751209827296,
+      "duration" : 4363
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Авторизация через форму регистрации",
+    "uid" : "7071cb963034601a",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1751209827299,
+      "stop" : 1751209831364,
+      "duration" : 4065
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Авторизация с кнопки на главной странице",
+    "uid" : "c1d1b2aa1408218e",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1751209831369,
+      "stop" : 1751209835375,
+      "duration" : 4006
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "Авторизация через личный кабинет",
+    "uid" : "e515cbcb384ca865",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1751209835378,
+      "stop" : 1751209839806,
+      "duration" : 4428
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  } ]
+}
