@@ -24,6 +24,7 @@ public class LoginPage {
     private final By registerButton = By.xpath("//a[text()='Зарегистрироваться']");
     private final By findPasswordButton = By.xpath("//a[text()='Восстановить пароль']");
     private final By wrongPassword = By.xpath("//p[contains(@class, 'input__error')]");
+    private final By placeOrderButton = By.xpath("//button[contains(text(), 'Оформить заказ')]");
 
     @Step("Ввести Email")
     public void setEmail(String email) {
@@ -51,7 +52,6 @@ public class LoginPage {
             new WebDriverWait(driver, Duration.ofSeconds(10))
                     .until(ExpectedConditions.urlContains("stellarburgers.nomoreparties.site"));
 
-            By placeOrderButton = By.xpath("//button[contains(text(), 'Оформить заказ')]");
             return new WebDriverWait(driver, Duration.ofSeconds(5))
                     .until(ExpectedConditions.visibilityOfElementLocated(placeOrderButton)) != null;
         } catch (TimeoutException e) {
